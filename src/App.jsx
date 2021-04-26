@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card'
 import {CardContent} from '@material-ui/core'
 import {DispatchContext, Provider, StateContext} from './context/context'
 import {getCountryInfo} from './thunks/thunks'
+import Preloader from './components/Preloader/Preloader'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
@@ -24,7 +25,7 @@ function App() {
     getCountryData()
   }, [country])
 
-  if(isLoading) return <h1>Loading...</h1>
+  if(isLoading) return <Preloader/>
 
   return (
     <div className="app">
@@ -45,10 +46,18 @@ function App() {
   );
 }
 
-const AppWrap = () => (
-  <Provider className={'app'}>
-    <App/>
-  </Provider>
-)
+class AppWrap extends React.Component {
+  componentDidCatch(error, errorInfo) {
+    console.log(error, errorInfo)
+  }
+
+  render() {
+    return (
+      <Provider className={'app'}>
+        <App/>
+      </Provider>
+    )
+  }
+}
 
 export default AppWrap;
