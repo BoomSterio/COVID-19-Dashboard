@@ -1,26 +1,17 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import s from './Header.module.css'
 import {FormControl} from '@material-ui/core'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import axios from 'axios'
+import {contextActions, DispatchContext, StateContext} from '../../context/context'
 
-const Header = ({country, changeCountry}) => {
+const Header = () => {
   //todo: create DAL for API requests
-  const [countries, setCountries] = useState([])
+  const {country, countries} = useContext(StateContext)
+  const dispatch = useContext(DispatchContext)
 
-  useEffect(() => {
-    const getCountriesData = async () =>  {
-      const response = await axios.get('https://disease.sh/v3/covid-19/countries')
-
-      setCountries(response.data.map(country => ({
-        name: country.country,
-        code: country.countryInfo.iso2
-      })))
-    }
-
-    getCountriesData()
-  }, [])
+  const changeCountry = e => dispatch(contextActions.setCountry(e.target.value))
 
   return (
     <header className={s.header}>
