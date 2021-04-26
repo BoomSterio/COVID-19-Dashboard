@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1500px;
+  width: 100%;
+  padding: 8px 10px;
+}
+
+.app__left {
+  flex: 0.85;
+}
