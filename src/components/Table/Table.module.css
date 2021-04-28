@@ -1,0 +1,25 @@
+.table {
+  margin: 18px 0;
+  height: 420px;
+  overflow: auto;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: white;
+}
+
+.table tr:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
+
+.table td {
+  padding-left: 0.3rem;
+  border-right: 1px solid white;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats small {
+  color: rgba(255, 0, 0, 0.54)
+}

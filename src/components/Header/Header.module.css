@@ -10,3 +10,9 @@
 .select {
   width: 145px;
 }
+
+@media (max-width: 678px) {
+  .header h2 {
+    display: none;
+  }
+}

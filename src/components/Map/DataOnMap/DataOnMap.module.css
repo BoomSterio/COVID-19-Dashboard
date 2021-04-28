@@ -1,0 +1,6 @@
+.flag {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background-size: contain;
+}

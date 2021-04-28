@@ -1,6 +1,6 @@
 .wrapper {
   height: 100vh;
-  /*This part is important for centering*/
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

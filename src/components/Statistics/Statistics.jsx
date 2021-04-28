@@ -1,13 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import s from './Statistics.module.css'
-import InfoBox from '../InfoBox/InfoBox'
+import InfoBox from './InfoBox/InfoBox'
+import {StateContext} from '../../context/context'
 
-const Statistics = ({info}) => {
+const Statistics = () => {
+  const {countryInfo} = useContext(StateContext)
+
   return (
     <div className={s.statistics}>
-      <InfoBox title={'COVID-19 Cases'} cases={info.todayCases} total={info.cases?.toLocaleString()}/>
-      <InfoBox title={'Recovered'} cases={info.todayRecovered} total={info.recovered?.toLocaleString()}/>
-      <InfoBox title={'Deaths'} cases={info.todayDeaths} total={info.deaths?.toLocaleString()}/>
+      <InfoBox type={'cases'} title={'COVID-19 Cases'} cases={countryInfo.todayCases} total={countryInfo.cases?.toLocaleString('en')}/>
+      <InfoBox type={'recovered'} title={'Recovered'} cases={countryInfo.todayRecovered} total={countryInfo.recovered?.toLocaleString('en')}/>
+      <InfoBox type={'deaths'} title={'Deaths'} cases={countryInfo.todayDeaths} total={countryInfo.deaths?.toLocaleString('en')}/>
     </div>
   )
 }

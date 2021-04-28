@@ -1,9 +1,8 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import s from './Header.module.css'
 import {FormControl} from '@material-ui/core'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
-import axios from 'axios'
 import {contextActions, DispatchContext, StateContext} from '../../context/context'
 
 const Header = () => {

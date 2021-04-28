@@ -1,29 +1,18 @@
 import './App.css'
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import Header from './components/Header/Header'
 import Statistics from './components/Statistics/Statistics'
 import Card from '@material-ui/core/Card'
 import {CardContent} from '@material-ui/core'
-import {DispatchContext, Provider, StateContext} from './context/context'
-import {getCountryInfo} from './thunks/thunks'
+import {Provider, StateContext} from './context/context'
 import Preloader from './components/Preloader/Preloader'
+import Table from './components/Table/Table'
+import Graphs from './components/Graphs/Graphs'
+import 'leaflet/dist/leaflet.css'
+import Map from './components/Map/Map'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false)
-  const {country, countryInfo, tableData} = useContext(StateContext)
-  const dispatch = useContext(DispatchContext)
-
-  useEffect(() => {
-    const getCountryData = async () => {
-      setIsLoading(true)
-
-      await getCountryInfo(dispatch, country)
-
-      setIsLoading(false)
-    }
-
-    getCountryData()
-  }, [country])
+  const {isLoading} = useContext(StateContext)
 
   if(isLoading) return <Preloader/>
 
@@ -32,13 +21,13 @@ function App() {
       <div className="content-wrapper">
         <div className="app__left">
           <Header/>
-          <Statistics info={countryInfo}/>
-          <h1>MAP MAP MAP</h1>
+          <Statistics/>
+          <Map/>
         </div>
         <Card className="app__right">
           <CardContent>
-            <h3>Live Cases by Country (Table)</h3>
-            <h3>Worldwide new casesType (Graph)</h3>
+            <Table/>
+            <Graphs/>
           </CardContent>
         </Card>
       </div>

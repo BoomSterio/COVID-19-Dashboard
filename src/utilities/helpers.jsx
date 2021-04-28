@@ -1,0 +1,1 @@
+export const sortByCases = data => [...data].sort((a, b) => b.todayCases - a.todayCases)
