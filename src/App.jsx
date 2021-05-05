@@ -10,6 +10,7 @@ import Table from './components/Table/Table'
 import Graphs from './components/Graphs/Graphs'
 import 'leaflet/dist/leaflet.css'
 import Map from './components/Map/Map'
+import Notification from './components/Notification/Notification'
 
 function App() {
   const {isLoading} = useContext(StateContext)
@@ -31,6 +32,7 @@ function App() {
           </CardContent>
         </Card>
       </div>
+      <Notification/>
     </div>
   );
 }

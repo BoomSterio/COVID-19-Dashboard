@@ -105,4 +105,4 @@ const LineGraph = ({label, casesType = 'cases', data}) => {
   );
 }
 
-export default LineGraph
+export default React.memo(LineGraph)

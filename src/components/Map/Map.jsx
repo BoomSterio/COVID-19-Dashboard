@@ -10,7 +10,7 @@ const Map = () => {
 
   return (
     <Card elevation={5} className={s.map}>
-      <MapContainer style={{ width: '100%', height: '100%' }} center={mapCenter} zoom={mapZoom}>
+      <MapContainer minZoom={2} style={{ width: '100%', height: '100%' }} center={mapCenter} zoom={mapZoom}>
         <TileLayer
           url={'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -2,7 +2,13 @@
   width: 150px;
   padding: 12px 14px;
   margin: 4px;
+  border: 1px solid transparent;
   cursor: pointer;
+  transition: all .1s ease-out !important;
+}
+
+.infoBox:hover {
+  transform: translateY(-3px);
 }
 
 .infoBox h3 {
@@ -10,16 +16,16 @@
 }
 
 .cases {
-  box-shadow: 0px 0px 5px 3px rgba(204, 16, 52, 0.5) inset;
-  border: 1px solid rgba(204, 16, 52, 0.5);
+  box-shadow: 0px 0px 5px 3px rgba(204, 16, 52, 0.5) inset !important;
+  border-color:rgba(204, 16, 52, 0.5);
 }
 
 .recovered {
-  box-shadow: 0px 0px 5px 3px rgba(9, 179, 0, 0.5) inset;
-  border: 1px solid rgba(9, 179, 0, 0.5);
+  box-shadow: 0px 0px 5px 3px rgba(9, 179, 0, 0.5) inset !important;
+  border-color: rgba(9, 179, 0, 0.5);
 }
 
 .deaths {
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5) inset;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5) inset !important;
+  border-color: rgba(0, 0, 0, 0.5);
 }
